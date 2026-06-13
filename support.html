@@ -1,37 +1,154 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>支持 — 青迹</title>
+    <title>技术支持 — 青迹</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.8; background: #f8f9fa; }
-        h1 { font-size: 24px; margin-bottom: 8px; color: #1a1a1a; }
-        h2 { font-size: 18px; margin-top: 28px; color: #444; }
-        a { color: #4CAF50; }
-        .card { background: #fff; border-radius: 12px; padding: 20px; margin: 16px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-        .btn { display: inline-block; background: #4CAF50; color: #fff; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+        :root { --bg: #f8f9fa; --card: #fff; --text: #333; --heading: #1a1a1a; --link: #4CAF50; --shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', 'Noto Sans KR', sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: var(--text); line-height: 1.8; background: var(--bg); }
+        h1 { font-size: 24px; margin-bottom: 8px; color: var(--heading); }
+        h2 { font-size: 18px; margin-top: 0; color: #444; }
+        a { color: var(--link); }
+        .card { background: var(--card); border-radius: 12px; padding: 20px; margin: 16px 0; box-shadow: var(--shadow); }
+        .btn { display: inline-block; background: var(--link); color: #fff; padding: 10px 24px; border-radius: 8px; text-decoration: none; font-weight: 500; }
+        .lang-bar { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .lang-bar button { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 4px 12px; font-size: 13px; cursor: pointer; color: var(--text); }
+        .lang-bar button.active { background: var(--link); color: #fff; border-color: var(--link); }
+        [data-lang] { display: none; }
+        [data-lang].show { display: revert; }
+        .card[data-lang].show { display: block; }
     </style>
 </head>
 <body>
-    <h1>青迹 · 用户支持</h1>
 
-    <p>感谢使用青迹！如有问题或建议，欢迎反馈。</p>
+<div class="lang-bar">
+    <button onclick="switchLang('zh-Hans')" id="btn-zh">中文</button>
+    <button onclick="switchLang('en')" id="btn-en">English</button>
+    <button onclick="switchLang('ja')" id="btn-ja">日本語</button>
+    <button onclick="switchLang('de')" id="btn-de">Deutsch</button>
+    <button onclick="switchLang('ko')" id="btn-ko">한국어</button>
+</div>
 
-    <div class="card">
-        <h2>📧 邮件反馈</h2>
-        <p>发送邮件至 <a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a>，我们会尽快回复。</p>
-        <a class="btn" href="mailto:mygrowthlife@gmail.com">发送邮件</a>
-    </div>
+<!-- zh-Hans -->
+<h1 data-lang="zh-Hans">青迹 · 技术支持</h1>
+<p data-lang="zh-Hans">感谢使用青迹！如有问题或建议，欢迎反馈。</p>
+<div class="card" data-lang="zh-Hans">
+    <h2>邮件反馈</h2>
+    <p>发送邮件至 <a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a>，我们会尽快回复。</p>
+    <a class="btn" href="mailto:mygrowthlife@gmail.com">发送邮件</a>
+</div>
+<div class="card" data-lang="zh-Hans">
+    <h2>iCloud 同步问题</h2>
+    <p>如遇同步异常，请在 App 内进入「设置 → iCloud 管理」尝试手动同步。若仍无法解决，请通过上述邮箱联系我们。</p>
+</div>
+<div class="card" data-lang="zh-Hans">
+    <h2>功能建议</h2>
+    <p>欢迎通过邮件分享你的使用场景和功能建议，帮助我们让青迹变得更好。</p>
+</div>
 
-    <div class="card">
-        <h2>🔄 iCloud 同步问题</h2>
-        <p>如遇同步异常，请在 App 内进入「设置 → iCloud 管理」尝试手动同步。若仍无法解决，请通过上述邮箱联系我们。</p>
-    </div>
+<!-- en -->
+<h1 data-lang="en">QingTrace · Support</h1>
+<p data-lang="en">Thanks for using QingTrace! We'd love to hear from you if you have questions or suggestions.</p>
+<div class="card" data-lang="en">
+    <h2>Email Support</h2>
+    <p>Send us an email at <a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a> and we'll get back to you as soon as possible.</p>
+    <a class="btn" href="mailto:mygrowthlife@gmail.com">Send Email</a>
+</div>
+<div class="card" data-lang="en">
+    <h2>iCloud Sync Issues</h2>
+    <p>If sync is not working as expected, try going to "Settings → iCloud Management" within the app to manually trigger a sync. If the issue persists, contact us via the email above.</p>
+</div>
+<div class="card" data-lang="en">
+    <h2>Feature Requests</h2>
+    <p>Have an idea to make QingTrace better? Tell us about your use case via email — we read every piece of feedback.</p>
+</div>
 
-    <div class="card">
-        <h2>💡 功能建议</h2>
-        <p>欢迎通过邮件分享你的使用场景和功能建议，帮助我们让青迹变得更好。</p>
-    </div>
+<!-- ja -->
+<h1 data-lang="ja">QingTrace · サポート</h1>
+<p data-lang="ja">QingTraceをご利用いただきありがとうございます！ご質問やご提案がございましたら、ぜひお聞かせください。</p>
+<div class="card" data-lang="ja">
+    <h2>メールサポート</h2>
+    <p><a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a> までメールをお送りください。できるだけ早く返信いたします。</p>
+    <a class="btn" href="mailto:mygrowthlife@gmail.com">メールを送る</a>
+</div>
+<div class="card" data-lang="ja">
+    <h2>iCloud 同期の問題</h2>
+    <p>同期が正常に動作しない場合は、アプリ内の「設定 → iCloud管理」から手動同期をお試しください。それでも解決しない場合は、上記のメールまでご連絡ください。</p>
+</div>
+<div class="card" data-lang="ja">
+    <h2>機能リクエスト</h2>
+    <p>QingTraceをより良くするためのアイデアがあれば、メールでお聞かせください。すべてのご意見に目を通しています。</p>
+</div>
+
+<!-- de -->
+<h1 data-lang="de">QingTrace · Support</h1>
+<p data-lang="de">Vielen Dank, dass Sie QingTrace nutzen! Wenn Sie Fragen oder Anregungen haben, freuen wir uns auf Ihre Nachricht.</p>
+<div class="card" data-lang="de">
+    <h2>E-Mail-Support</h2>
+    <p>Senden Sie uns eine E-Mail an <a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a> — wir antworten so schnell wie möglich.</p>
+    <a class="btn" href="mailto:mygrowthlife@gmail.com">E-Mail senden</a>
+</div>
+<div class="card" data-lang="de">
+    <h2>iCloud-Synchronisationsprobleme</h2>
+    <p>Wenn die Synchronisation nicht wie erwartet funktioniert, versuchen Sie in der App unter „Einstellungen → iCloud-Verwaltung" eine manuelle Synchronisation. Falls das Problem weiterhin besteht, kontaktieren Sie uns bitte per E-Mail.</p>
+</div>
+<div class="card" data-lang="de">
+    <h2>Funktionsvorschläge</h2>
+    <p>Haben Sie eine Idee, wie wir QingTrace verbessern können? Teilen Sie uns Ihren Anwendungsfall per E-Mail mit — wir lesen jedes Feedback.</p>
+</div>
+
+<!-- ko -->
+<h1 data-lang="ko">QingTrace · 지원</h1>
+<p data-lang="ko">QingTrace를 이용해 주셔서 감사합니다! 질문이나 제안이 있으시면 언제든 알려주세요.</p>
+<div class="card" data-lang="ko">
+    <h2>이메일 지원</h2>
+    <p><a href="mailto:mygrowthlife@gmail.com">mygrowthlife@gmail.com</a>로 이메일을 보내주시면 최대한 빨리 답변 드리겠습니다.</p>
+    <a class="btn" href="mailto:mygrowthlife@gmail.com">이메일 보내기</a>
+</div>
+<div class="card" data-lang="ko">
+    <h2>iCloud 동기화 문제</h2>
+    <p>동기화가 정상적으로 작동하지 않는 경우, 앱 내에서 '설정 → iCloud 관리'로 이동하여 수동 동기화를 시도해 보세요. 문제가 계속되면 위 이메일로 문의해 주세요.</p>
+</div>
+<div class="card" data-lang="ko">
+    <h2>기능 제안</h2>
+    <p>QingTrace를 더 좋게 만들 아이디어가 있다면 이메일로 알려주세요. 모든 의견을 꼼꼼히 읽어보고 있습니다.</p>
+</div>
+
+<script>
+const supported = ['zh-Hans','en','ja','de','ko'];
+
+function showLang(lang) {
+    if (!supported.includes(lang)) lang = 'en';
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('show', el.dataset.lang === lang);
+    });
+    supported.forEach(l => {
+        const btn = document.getElementById('btn-' + l.replace('zh-Hans','zh'));
+        if (btn) btn.classList.toggle('active', l === lang);
+    });
+    document.documentElement.lang = lang;
+}
+
+function switchLang(lang) {
+    showLang(lang);
+    try { localStorage.setItem('qingtrace-lang', lang); } catch(e) {}
+}
+
+function detectLang() {
+    try {
+        const stored = localStorage.getItem('qingtrace-lang');
+        if (stored && supported.includes(stored)) return stored;
+    } catch(e) {}
+    const nav = (navigator.language || '').split('-');
+    if (supported.includes(nav.join('-'))) return nav.join('-');
+    if (nav[0] === 'zh') return 'zh-Hans';
+    if (supported.includes(nav[0])) return nav[0];
+    return 'en'; // default fallback
+}
+
+showLang(detectLang());
+</script>
+
 </body>
 </html>
